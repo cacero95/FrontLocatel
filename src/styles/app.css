@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.MainNavbar {
+  background: #01579B;
+  height: 70px;
+}
+
+.left_ajust {
+  padding-left: 40px;
+}
+
+.MainToolbar {
+  width: 100%;
+  display: grid !important;
+  justify-items: flex-end;
+  grid-template-columns: 70% 30%;
+}
+.MainToolbar .ToolbarLogo {
+  padding-right: 10px;
+}
+.MainToolbar .ToolBarUser {
+  padding-right: 10px;
+}
+
+.login-register {
+  background-size: auto;
+  height: 90vh;
+  width: 100%;
+  justify-content: space-evenly;
+  background: #f5f5f5;
+  display: flex;
+  align-items: flex-start;
+  overflow-y: hidden;
+  transition-duration: 0.5s;
+}
+.login-register .backgroundLogin {
+  width: 70%;
+  height: 100%;
+  background-size: cover;
+}
+.login-register .backgroundLogin img {
+  height: 100%;
+  width: 100%;
+}
+.login-register .formulary {
+  height: 100%;
+  width: 30%;
+  box-shadow: 3px 3px red, -1em 0 0.4em grey;
+}
+.login-register .formulary .formContainer {
+  padding: 100px 20px 20px;
+  display: grid;
+  justify-items: flex-start;
+}
+.login-register .formulary .formContainer .formSection {
+  margin: 20px 0;
+}
+
+.RegisterChangeButton {
+  cursor: pointer;
+}
+
+.ModalLoading {
+  width: 300px;
+  display: grid;
+  justify-items: flex-start;
+  padding: 20px;
+}
+.ModalLoading img {
+  width: 200px;
+}
+.ModalLoading .loadingButton {
+  transform: none;
+  transition: transform 3000ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.CreateCostContainer .TabsPlan {
+  margin: auto;
+}
+.CreateCostContainer .TabsPlan .MuiBox-root {
+  border-bottom: none !important;
+}
+.CreateCostContainer .MuiTabs-flexContainer {
+  margin-bottom: 5px;
+}
+.CreateCostContainer .Mui-selected {
+  background: #0097A7;
+  color: white !important;
+}
+
+.ModalContentDialog {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ModalContainer .ItemDivided {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px 0;
+}
+.ModalContainer .ItemDivided .DivisionModal {
+  padding: 10px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ModalFullSize .MuiDialog-paperScrollPaper {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.defaultDialog .MuiDialog-paperWidthSm {
+  margin: 0;
+  background: transparent;
+}
+.defaultDialog .MuiDialog-paperWidthSm .ContainerBoxDialog {
+  margin: 16px;
+  background: white;
+  position: relative;
+  height: 100%;
+  overflow-y: hidden;
+}
+.defaultDialog .MuiDialog-paperWidthSm .ContainerBoxDialog .ModalDialogContent {
+  height: 60vh;
+}
+.defaultDialog .MuiDialog-paperWidthSm .ContainerBoxDialog .ActionsDialog .closeIconModal {
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+.defaultDialog .MuiDialog-paperWidthSm .ContainerBoxDialog .AditionalActions {
+  display: flex;
+  justify-content: center;
+}
+.defaultDialog .MuiDialog-paperWidthSm .ContainerBoxDialog .AditionalActions .ActivityActions button {
+  margin-right: 10px;
+}
+
+.TabsPlan .MuiBox-root {
+  border-bottom: none !important;
+}
+
+.HomeContainer {
+  padding: 0;
+  position: relative;
+  height: 85vh;
+  width: 100%;
+  overflow: hidden;
+}
+.HomeContainer .AccountsContainer {
+  padding: 10px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.CardCredit {
+  margin: 20px 0;
+  padding: 20px;
+  min-width: 600px;
+  border: 2px solid #2d2d2d;
+}
+.CardCredit .BasicInfo {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: max-content;
+}
+.CardCredit .BasicInfo img {
+  width: 200px;
+}
+.CardCredit .Actions {
+  padding: 10px 0;
+  display: flex;
+}
+.CardCredit .Actions button {
+  margin-right: 10px;
+}
+
+.HomeContainer .createAccount {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+
+/*# sourceMappingURL=app.css.map */

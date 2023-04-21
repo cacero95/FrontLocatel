@@ -1,0 +1,64 @@
+.ModalLoading
+    width: 300px
+    display: grid
+    justify-items: flex-start
+    padding: 20px
+    img
+        width: 200px
+    .loadingButton
+        transform: none
+        transition: transform 3000ms cubic-bezier(0, 0, 0.2, 1) 0ms
+.CreateCostContainer
+    .TabsPlan
+        margin: auto
+        .MuiBox-root
+            border-bottom: none !important
+    .MuiTabs-flexContainer
+        margin-bottom: 5px
+    .Mui-selected
+        background: $Blue_Bondi
+        color: white !important
+.ModalContentDialog
+    position: relative
+    display: flex
+    justify-content: space-between
+.ModalContainer
+    .ItemDivided
+        display: grid
+        grid-template-columns: 50% 50%
+        padding: 10px 0
+        .DivisionModal
+            padding: 10px
+.modalActions
+    display: flex
+    justify-content: space-evenly
+.ModalFullSize
+    .MuiDialog-paperScrollPaper
+        width: 100% !important
+        max-width: 100%
+.defaultDialog
+    .MuiDialog-paperWidthSm
+        margin: 0
+        background: transparent
+        .ContainerBoxDialog
+            margin: 16px
+            background: white
+            position: relative
+            height: 100%
+            overflow-y: hidden
+            .ModalDialogContent
+                height: 60vh
+            .ActionsDialog
+                .closeIconModal
+                    position: absolute
+                    right: 0
+                    top: 6px
+            .AditionalActions
+                display: flex
+                justify-content: center
+                .ActivityActions
+                    button
+                        margin-right: 10px
+.TabsPlan
+    .MuiBox-root
+        border-bottom: none !important
