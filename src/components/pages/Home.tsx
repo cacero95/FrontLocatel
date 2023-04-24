@@ -13,7 +13,7 @@ type TypeAction = "addFound" | "takeOut";
 
 export const Home = () => {
 
-    const { user, setLoading } = useContext( UserContext );
+    const { user, setLoading, setMssContent } = useContext( UserContext );
     const [ accounts, setData ] = useState<IAccount[]>([]);
     const [ dialogCreate, setCreate ] = useState( false );
     const [{ dialogSend, sendNumber }, setSend ] = useState({
@@ -38,6 +38,18 @@ export const Home = () => {
         }) : setGet({ dialogGet : true, getNumber : number })
     }
 
+    const handleRequest = ( status : boolean ) => {
+        dialogSend === true
+            ? setSend({ sendNumber : -1, dialogSend : false })
+            : setGet({ getNumber : -1, dialogGet : false });
+        if ( status === true ) {
+            requestAccounts();
+            setMssContent({ activate : true, content : 'Exito!', color : 'green' });
+        } else {
+            setMssContent({ activate : true, content : 'Problemas de conexión', color : 'red' });
+        }
+    }
+
     const handleClose = () =>  {
         setCreate( false );
         requestAccounts();
@@ -56,6 +68,7 @@ export const Home = () => {
                 component = {
                     <SendMoney
                         number = { sendNumber }
+                        handleRequest = { handleRequest }
                     />
                 }
                 handleClose = { () => '' }
@@ -66,6 +79,7 @@ export const Home = () => {
                 component = {
                     <GetMoney 
                         number = { getNumber }
+                        handleRequest = { handleRequest }
                     />
                 }
                 handleClose = { () => '' }

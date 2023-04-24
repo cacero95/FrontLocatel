@@ -4,22 +4,30 @@ import { Button } from '@mui/material';
 import { addFounds } from '../../../api/AccountRequest/AccountRequest';
 
 interface Props {
-    number : number;
+    number          : number;
+    handleRequest   : ( status : boolean ) => void;
 }
 
-export const SendMoney :FC<Props> = ({ number }) => {
+export const SendMoney :FC<Props> = ({ number, handleRequest }) => {
 
     const amountRef = useRef(0);
 
     const handleAmount = ( value : number, name : string ) => {
-        console.log( value, name );
-        return { status : false, message : '' };
+        if ( Number.isInteger( value ) ) {
+            amountRef.current = value;
+            return { status : false, message : '' };
+        }
+        amountRef.current = -1;
+        return { status : true, message : "El valor no es numérico" }
     }
 
     const sendMoney = async () => {
-        const out = await addFounds({
-            number, amount: amountRef.current
-        });
+        if ( amountRef.current > -1 ) {
+            const out : any = await addFounds({
+                number, amount: amountRef.current
+            });
+            handleRequest( out.status && out.status === true );
+        }
     }
 
     return (
@@ -33,6 +41,7 @@ export const SendMoney :FC<Props> = ({ number }) => {
                 <Button
                     variant = "contained"
                     color = "primary"
+                    onClick = { sendMoney }
                 >
                     Enviar
                 </Button>

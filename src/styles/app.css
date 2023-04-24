@@ -25,6 +25,15 @@
   padding-right: 10px;
 }
 
+#MainContainer {
+  position: relative;
+}
+#MainContainer #footerMss {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .login-register {
   background-size: auto;
   height: 90vh;
@@ -186,6 +195,12 @@
   position: absolute;
   bottom: 0;
   right: 10px;
+}
+
+.SendMoney {
+  display: grid;
+  height: 180px;
+  align-items: center;
 }
 
 /*# sourceMappingURL=app.css.map */

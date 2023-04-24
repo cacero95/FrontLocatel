@@ -6,8 +6,7 @@ export const LinearLoading = () => {
 
     const [ load, setLoad ] = useState( true );
     const eventRef = useRef<any>();
-
-    console.log( load );
+    
     useEffect(() => {
         eventRef.current = setInterval(() => {
             setLoad( actual => !actual )

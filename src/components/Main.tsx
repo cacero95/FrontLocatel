@@ -1,19 +1,19 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { UserContext } from "../context/UserContext";
 import { UseDialog } from "./hooks/UseDialog";
 import { ToolBar } from "../templates/ToolBar";
 import { Grid } from "@mui/material";
 import { Navigation } from "../Navigation";
 import { LinearLoading } from "../templates/LinearLoading";
+import MssFooter from "../templates/MssFooter";
 
 export const Main = () => {
 
-    const { userState, loading } = useContext( UserContext );
-
-    console.log( loading, userState );
+    const { loading } = useContext( UserContext );
+	const footerRef = useRef<any>();
 
     return (
-        <div>
+        <div id = "MainContainer">
             <UseDialog
 				title = ""
 				component = { <LinearLoading /> }
@@ -30,6 +30,12 @@ export const Main = () => {
 			>
 				<Navigation />
 			</Grid>
+			<div id = "footerMss" ref = { footerRef }>
+				<MssFooter
+					container = { footerRef.current }
+					id = "footerMssPopper"
+				/>	
+			</div>
         </div>
     )
 }

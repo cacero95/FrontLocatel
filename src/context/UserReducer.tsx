@@ -1,7 +1,7 @@
 import { UserState } from "./UserContext";
 
 type UserOptions = {
-    type    : 'getUser' | 'setUser' | 'loading';
+    type    : 'getUser' | 'setUser' | 'loading' | 'setMssContent';
     payload : any;
 }
 
@@ -19,6 +19,11 @@ export const UserReducer = ( state : UserState, { type, payload } : UserOptions 
             return {
                 ...state,
                 loading : payload
+            }
+        case "setMssContent":
+            return {
+                ...state,
+                mssFooter : payload
             }
         default: return { ...state };
     }
